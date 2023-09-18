@@ -1,8 +1,4 @@
-import pytest
-
-from classes.many_to_many import Player
-from classes.many_to_many import Game
-from classes.many_to_many import Result
+from classes.many_to_many import Game, Player, Result
 
 
 class TestPlayer:
@@ -127,10 +123,10 @@ class TestPlayer:
         Result(player_1, game_2, 3500)
         Result(player_2, game_1, 190)
 
-        assert player_1.played_game(game_1) == True
-        assert player_1.played_game(game_2) == True
-        assert player_2.played_game(game_1) == True
-        assert player_2.played_game(game_2) == False
+        assert player_1.played_game(game_1) is True
+        assert player_1.played_game(game_2) is True
+        assert player_2.played_game(game_1) is True
+        assert player_2.played_game(game_2) is False
 
     def test_has_num_times_played(self):
         """player knows how many times a game has been played"""
@@ -149,10 +145,10 @@ class TestPlayer:
         assert player_2.num_times_played(game_2) == 1
 
     # def test_highest_score(self):
-    #     '''Player class finds player with highest average score for a given game'''
+    #     """Player class finds player with highest average score for a given game"""
     #     game = Game("Skribbl.io")
-    #     player_1 = Player('Saaammmm')
-    #     player_2 = Player('ActuallyTopher')
+    #     player_1 = Player("Saaammmm")
+    #     player_2 = Player("ActuallyTopher")
     #     Result(player_1, game, 2000)
     #     Result(player_1, game, 1)
     #     Result(player_2, game, 1900)
